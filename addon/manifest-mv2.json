@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Trencher (prototype)",
+  "version": "0.1.4",
+  "description": "A clearance toolbar for the message pane: stay, move, new folder, trash, spam.",
+  "author": "Anthony John Hunter Morris KC; implemented by DeepSeek V4 Flash",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "trencher@lexscripta.com",
+      "strict_min_version": "115.0"
+    }
+  },
+  "permissions": [
+    "messagesRead",
+    "messagesMove",
+    "messagesDelete",
+    "accountsRead",
+    "accountsFolders",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "message_display_action": {
+    "default_title": "Trencher — what do I do with this one?",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/trencher.svg",
+      "32": "icons/trencher.svg"
+    }
+  },
+  "icons": {
+    "16": "icons/trencher.svg",
+    "32": "icons/trencher.svg",
+    "64": "icons/trencher.svg"
+  }
+}
