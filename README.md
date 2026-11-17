@@ -2,9 +2,9 @@
 
 Trencher is a small, opinionated tool for clearing an inbox. It proceeds from one
 observation: whatever else may be done with an incoming message, the immediate
-decision is always one of five — **stays here**, **move on**, **wrong bay**,
-**new folder**, **trash**. Trencher puts those five decisions in front of the
-reader, one click each, and gets out of the way.
+decision is always one of five — **stays here**, **move on**, **new folder**,
+**trash**, **spam**. Trencher puts those five decisions in front of the reader,
+one click each, and gets out of the way.
 
 It comes in two parts.
 
@@ -15,17 +15,17 @@ in any folder and a toolbar offers the five actions:
 | --- | --- |
 | Stays here | Already correctly placed; nothing to do |
 | Move on | File it in a permanent folder, chosen from a list grouped under your own headings |
-| Wrong bay | It belongs in a different bay; choose another |
 | New folder | Create a folder or sub-folder, and file the message into it |
 | Trash | Send it to the Trash folder |
+| Spam | Mark it as spam; the client's own adaptive filter learns from it |
 
 The destination list is grouped under headings you define, and a folder you have
 not yet classified inherits the heading of its nearest classified ancestor — so a
 matter created under `matters - active` is classified the moment it exists.
 
 **The desktop program** (`app/mail_triage_gui.py`) is a companion for a backlog:
-it walks messages in a set of bay folders one at a time, showing the same
-decisions, and records the choices as filing rules so that the same sender or
+it walks messages in a set of holding folders — bays — one at a time, showing
+the same decisions, and records the choices as filing rules so that the same sender or
 domain is classified automatically thereafter. It is a Tk application and needs
 only the Python standard library.
 
