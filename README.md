@@ -31,17 +31,20 @@ only the Python standard library.
 
 ## Installing the add-on in Betterbird or Thunderbird
 
-The packaged `.xpi` is unsigned, so the client must be told to permit one
-unsigned installation:
+The packaged `.xpi` is unsigned, and current Betterbird and Thunderbird builds enforce
+signatures: an unsigned add-on cannot be installed permanently, and setting
+`xpinstall.signatures.required` to `false` does not help, because the client clears that
+preference at startup (verified on Betterbird 153.7.0esr with both `prefs.js` and
+`user.js`).
 
-1. In **Settings → General → Config Editor**, set
-   `xpinstall.signatures.required` to `false`.
-2. In **Add-ons and Themes → gear menu → Install Add-on From File…**, choose the
-   `.xpi`.
+Until a signed build is available, load it for the session instead:
 
-Note that Betterbird and Thunderbird rewrite `prefs.js` from time to time, which
-can silently undo step 1; if the add-on disappears, restore the preference and
-install again.
+1. Open **`about:debugging`** in the client.
+2. Choose **This Thunderbird** in the left-hand column.
+3. **Load Temporary Add-on…** and select the `.xpi`.
+
+The toolbar then works fully; it disappears when the client is restarted. Signing through
+`addons.thunderbird.net` is what makes an installation permanent.
 
 ## Classifying your own folders
 
